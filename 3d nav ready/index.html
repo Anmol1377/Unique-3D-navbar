@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="ng-app">
+<head>
+  <meta charset="UTF-8">
+  <title>3D-nav</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div ng-controller="HomeCtrl">
+  <div class="toggle_menu" ng-click="menu_open = !menu_open" ng-init="menu_open = false"><i class="fa fa-bars"></i></div>
+  <div class="main" ng-class="{'has_menu_open': menu_open == true}" ng-init="menu_index = 1">
+    <div class="bg bg1" ng-class="{'visible': menu_index == 1}"></div>
+    <div class="bg bg2" ng-class="{'visible': menu_index == 2}"></div>
+    <div class="bg bg3" ng-class="{'visible': menu_index == 3}"></div>
+    <div class="bg bg4" ng-class="{'visible': menu_index == 4}"></div>
+  </div>
+  <div class="menu" ng-class="{'is_open': menu_open == true}">
+    <ul>
+      <li ng-click="menu_index = 1; menu_open = false;" ng-class="{'active': menu_index == 1}">Home</li>
+      <li ng-click="menu_index = 2; menu_open = false;" ng-class="{'active': menu_index == 2}">About</li>
+      <li ng-click="menu_index = 3; menu_open = false;" ng-class="{'active': menu_index == 3}">Projects</li>
+      <li ng-click="menu_index = 4; menu_open = false;" ng-class="{'active': menu_index == 4}">Contacts</li>
+    </ul>
+  </div>
+  <div class="copy" ng-class="{'is_visible': menu_open == true}">A creation by Anmol</div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
